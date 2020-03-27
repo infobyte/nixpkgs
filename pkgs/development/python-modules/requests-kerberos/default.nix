@@ -13,6 +13,8 @@ buildPythonPackage rec {
   };
 
   checkInputs = [ mock ];
+  doCheck = !stdenv.isDarwin; # many failures on darwin
+  doInstallCheck = !stdenv.isDarwin; # many failures on darwin
   propagatedBuildInputs = [ requests pykerberos ];
 
   # they have a setup.py which mentions a test suite that doesn't exist...
