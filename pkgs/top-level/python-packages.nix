@@ -4970,6 +4970,10 @@ in {
 
   pygobject3 = callPackage ../development/python-modules/pygobject/3.nix { inherit (pkgs) meson pkgconfig; };
 
+  pygobject = callPackage ../development/python-modules/pygobject/3.nix {
+    inherit (pkgs) pkgconfig;
+  };
+
   pygogo = callPackage ../development/python-modules/pygogo { };
 
   pygpgme = callPackage ../development/python-modules/pygpgme { };
