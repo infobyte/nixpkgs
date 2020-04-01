@@ -969,6 +969,10 @@ in {
     inherit (pkgs) pkgconfig;
   };
 
+  pygobject = callPackage ../development/python-modules/pygobject/3.nix {
+    inherit (pkgs) pkgconfig;
+  };
+
   pygtail = callPackage ../development/python-modules/pygtail { };
 
   pygtk = callPackage ../development/python-modules/pygtk {
