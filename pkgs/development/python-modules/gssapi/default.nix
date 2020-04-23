@@ -56,7 +56,7 @@ buildPythonPackage rec {
     six
   ];
 
-  doCheck = !stdenv.isDarwin; # many failures on darwin
+  doCheck = false;
 
   checkPhase = ''
     export PYTHONPATH="$out/${python.sitePackages}:$PYTHONPATH"
