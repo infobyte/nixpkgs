@@ -18,6 +18,8 @@ buildPythonPackage rec {
     sha256 = "24b8490c22310b0779a058ccb24ec2fef33d571bb5aba1f525ab5963b0eabcdd";
   };
 
+  propagatedBuildInputs = [ pyyaml ];
+
   checkInputs = [
     pyyaml
     prance
