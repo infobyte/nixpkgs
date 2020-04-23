@@ -55,8 +55,7 @@ buildPythonPackage rec {
     six
   ];
 
-  doCheck = pythonOlder "3.8"  # `shouldbe` not available
-    && !stdenv.isDarwin;  # many failures on darwin
+  doCheck = false;
 
   # skip tests which fail possibly due to be an upstream issue (see
   # https://github.com/pythongssapi/python-gssapi/issues/220)
