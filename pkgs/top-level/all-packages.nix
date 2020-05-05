@@ -5614,10 +5614,12 @@ in
 
   pal = callPackage ../tools/misc/pal { };
 
-  pandoc = haskell.lib.overrideCabal (haskell.lib.justStaticExecutables haskellPackages.pandoc) (drv: {
+  pandoc-original = haskell.lib.overrideCabal (haskell.lib.justStaticExecutables haskellPackages.pandoc) (drv: {
     configureFlags = drv.configureFlags or [] ++ ["-fembed_data_files"];
     buildDepends = drv.buildDepends or [] ++ [haskellPackages.file-embed];
   });
+
+  pandoc = callPackage ../tools/text/pandoc/default.nix {};
 
   pamtester = callPackage ../tools/security/pamtester { };
 
