@@ -1,5 +1,5 @@
 { stdenv, buildPythonPackage, fetchFromGitHub
-, pandoc, haskellPackages, texlive }:
+, pandoc, texlive }:
 
 buildPythonPackage rec {
   pname = "pypandoc";
@@ -21,7 +21,7 @@ buildPythonPackage rec {
   '';
 
   preCheck = ''
-    export PATH="${haskellPackages.pandoc-citeproc}/bin:${texlive.combined.scheme-small}/bin:$PATH"
+    export PATH="${pandoc}/bin:${texlive.combined.scheme-small}/bin:$PATH"
   '';
 
   meta = with stdenv.lib; {
