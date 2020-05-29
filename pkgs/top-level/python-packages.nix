@@ -1111,7 +1111,7 @@ in {
   };
 
   pygobject = callPackage ../development/python-modules/pygobject/3.nix {
-    inherit (pkgs) pkgconfig;
+    inherit (pkgs) meson pkgconfig;
   };
 
   pygtail = callPackage ../development/python-modules/pygtail { };
