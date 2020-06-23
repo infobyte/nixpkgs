@@ -8,20 +8,18 @@
 
 let
   executableName = "riot-desktop";
-  version = "1.5.15";
-  riot-web-src = fetchFromGitHub {
+  version = "1.6.6";
+  src = fetchFromGitHub {
     owner = "vector-im";
-    repo = "riot-web";
+    repo = "riot-desktop";
     rev = "v${version}";
-    sha256 = "08yk5is6n9ci1jml0b94a3swdybx01k5klbl30i1b76biyn75m77";
+    sha256 = "0yrybi6cv3lj0fq4ab4rzjm9l4flfw97hkwzlp7zzixb3z9h09h8";
   };
   electron = electron_7;
 
 in mkYarnPackage rec {
   name = "riot-desktop-${version}";
-  inherit version;
-
-  src = "${riot-web-src}/electron_app";
+  inherit version src;
 
   packageJSON = ./riot-desktop-package.json;
   yarnNix = ./riot-desktop-yarndeps.nix;
@@ -32,8 +30,8 @@ in mkYarnPackage rec {
     # resources
     mkdir -p "$out/share/riot"
     ln -s '${riot-web}' "$out/share/riot/webapp"
-    cp -r './deps/riot-web' "$out/share/riot/electron"
-    cp -r './deps/riot-web/img' "$out/share/riot"
+    cp -r './deps/riot-desktop' "$out/share/riot/electron"
+    cp -r './deps/riot-desktop/res/img' "$out/share/riot"
     rm "$out/share/riot/electron/node_modules"
     cp -r './node_modules' "$out/share/riot/electron"
 
@@ -80,7 +78,7 @@ in mkYarnPackage rec {
     description = "A feature-rich client for Matrix.org";
     homepage = https://about.riot.im/;
     license = licenses.asl20;
-    maintainers = with maintainers; [ pacien worldofpeace ];
+    maintainers = with maintainers; [ pacien worldofpeace ma27 ];
     inherit (electron.meta) platforms;
   };
 }
