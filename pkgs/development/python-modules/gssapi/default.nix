@@ -67,6 +67,6 @@ buildPythonPackage rec {
     homepage = https://pypi.python.org/pypi/gssapi;
     description = "Python GSSAPI Wrapper";
     license = licenses.mit;
-    broken = isPy38;
+    # broken = isPy38;
   };
 }
