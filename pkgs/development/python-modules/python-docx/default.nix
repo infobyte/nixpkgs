@@ -6,6 +6,7 @@
 , pytest
 , pyparsing
 , mock
+, isPy38
 }:
 
 buildPythonPackage rec {
@@ -17,6 +18,7 @@ buildPythonPackage rec {
     sha256 = "bc76ecac6b2d00ce6442a69d03a6f35c71cd72293cd8405a7472dfe317920024";
   };
 
+  doCheck = !isPy38;
   checkInputs = [ behave mock pyparsing pytest ];
   propagatedBuildInputs = [ lxml ];
 
@@ -29,6 +31,5 @@ buildPythonPackage rec {
     homepage = https://python-docx.readthedocs.io/en/latest/;
     license = lib.licenses.mit;
     maintainers = [ lib.maintainers.alexchapman ];
-    broken = true;
   };
 }
