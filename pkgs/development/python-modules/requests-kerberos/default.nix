@@ -14,6 +14,7 @@ buildPythonPackage rec {
 
   checkInputs = [ mock ];
   propagatedBuildInputs = [ requests pykerberos ];
+  doCheck = !stdenv.isDarwin;
 
   # they have a setup.py which mentions a test suite that doesn't exist...
   patches = [ ./fix_setup.patch ];
