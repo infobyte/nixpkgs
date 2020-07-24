@@ -20,7 +20,8 @@ buildPythonPackage rec {
 
   postPatch = lib.optionalString stdenv.isDarwin ''
     # Remove broken darwin test
-    rm -vf pylint/test/test_functional.py
+    rm -v tests/test_functional.py
+    rm -v tests/unittest_lint.py
   '';
 
   disabledTests = [
