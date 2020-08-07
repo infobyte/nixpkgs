@@ -23,7 +23,7 @@
 
 buildPythonPackage rec {
   pname = "weasyprint";
-  version = "50";
+  version = "51";
   disabled = !isPy3k;
 
   # excluded test needs the Ahem font
@@ -59,7 +59,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = "WeasyPrint";
-    sha256 = "0invs96zvmcr6wh5klj52jrcnr9qg150v9wpmbhcsf3vv1d1hbcw";
+    sha256 = "b3e971973a4f03c1430e6b838b75b5b57630415fcae8666d2be1347630ff6d6a";
   };
 
   meta = with stdenv.lib; {
