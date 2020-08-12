@@ -1015,7 +1015,11 @@ in {
   });
 
   cairocffi = if isPy3k then
-    callPackage ../development/python-modules/cairocffi { }
+    callPackage ../development/python-modules/cairocffi {
+      cairo = pkgs.cairo.override {
+        glSupport = false;
+      };
+    }
   else
     callPackage ../development/python-modules/cairocffi/0_9.nix { };
 
