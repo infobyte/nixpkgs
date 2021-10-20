@@ -12,7 +12,6 @@
 , sqlparse
 , pgspecial
 , setproctitle
-, keyring
 , pendulum
 , pytestCheckHook
 , mock
@@ -40,7 +39,6 @@ buildPythonApplication rec {
     sqlparse
     pgspecial
     setproctitle
-    keyring
     pendulum
   ];
 
