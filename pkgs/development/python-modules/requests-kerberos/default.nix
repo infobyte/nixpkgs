@@ -26,6 +26,8 @@ buildPythonPackage rec {
     pykerberos
   ];
 
+  doCheck = !stdenv.isDarwin;
+
   checkInputs = [
     mock
     pytestCheckHook
