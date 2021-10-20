@@ -1221,7 +1221,11 @@ in {
     inherit (self) python numpy boost;
   });
 
-  cairocffi = callPackage ../development/python-modules/cairocffi { };
+  cairocffi =  callPackage ../development/python-modules/cairocffi {
+      cairo = pkgs.cairo.override {
+        glSupport = false;
+      };
+    };
 
   cairosvg = callPackage ../development/python-modules/cairosvg { };
 
