@@ -5744,7 +5744,7 @@ in {
   };
 
   pygobject = callPackage ../development/python-modules/pygobject/3.nix {
-    inherit (pkgs) meson pkgconfig;
+    inherit (pkgs) meson;
   };
 
   pygogo = callPackage ../development/python-modules/pygogo { };

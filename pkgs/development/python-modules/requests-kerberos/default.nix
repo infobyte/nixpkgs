@@ -6,6 +6,7 @@
 , pykerberos
 , pytestCheckHook
 , mock
+, stdenv
 }:
 
 buildPythonPackage rec {
