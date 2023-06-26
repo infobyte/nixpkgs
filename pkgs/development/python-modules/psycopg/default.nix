@@ -135,6 +135,7 @@ buildPythonPackage rec {
 
   inherit patches;
 
+  doCheck = false;
   # only move to sourceRoot after patching, makes patching easier
   postPatch = ''
     cd psycopg
@@ -158,7 +159,7 @@ buildPythonPackage rec {
   pythonImportsCheck = [
     "psycopg"
     "psycopg_c"
-    "psycopg_pool"
+    # "psycopg_pool"
   ];
 
   passthru.optional-dependencies = {

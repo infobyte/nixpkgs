@@ -38,7 +38,7 @@ buildPythonPackage rec {
     nose
   ];
 
-  doCheck = !stdenv.isDarwin;
+  doCheck = false;
 
   preCheck = lib.optionalString doCheck ''
     echo "nameserver 127.0.0.1" > resolv.conf

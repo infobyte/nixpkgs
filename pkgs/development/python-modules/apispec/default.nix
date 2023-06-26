@@ -25,14 +25,12 @@ buildPythonPackage rec {
 
   propagatedBuildInputs = [
     packaging
+    pyyaml
   ];
 
   passthru.optional-dependencies = {
     marshmallow = [
       marshmallow
-    ];
-    yaml = [
-      pyyaml
     ];
     validation = [
       openapi-spec-validator
