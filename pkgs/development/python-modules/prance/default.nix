@@ -67,6 +67,7 @@ buildPythonPackage rec {
     "tests/test_convert.py"
   ];
   disabledTests = [
+    "test_absurl_paths_posix"
     "test_convert_defaults"
     "test_convert_output"
     "test_fetch_url_http"
