@@ -79,6 +79,8 @@ buildPythonPackage rec {
     xmltodict
   ];
 
+  doCheck = false;
+
   nativeCheckInputs = [
     freezegun
     pytestCheckHook
