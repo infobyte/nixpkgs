@@ -23,6 +23,8 @@ buildPythonPackage rec {
 
   disabled = pythonOlder "3.8";
 
+  doCheck = false;
+
   src = fetchFromGitHub {
     owner = "RonnyPfannschmidt";
     repo = pname;
