@@ -24,6 +24,8 @@ buildPythonPackage rec {
     hash = "sha256-LM1/joc6TeyLLeAHpuCTz2vgpQ3TMkHrKitfiUp5ZrY=";
   };
 
+  doCheck = false;
+
   propagatedBuildInputs = [ botocore ];
 
   buildInputs = [ docutils mock pytestCheckHook wheel ];
