@@ -51,7 +51,7 @@ buildPythonPackage rec {
 
   disabled = pythonOlder "3.6";
 
-  doCheck = False;
+  doCheck = false;
 
   src = fetchPypi {
     pname = "Twisted";
