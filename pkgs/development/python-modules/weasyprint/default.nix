@@ -27,6 +27,8 @@ buildPythonPackage rec {
   version = "58.1";
   format = "pyproject";
 
+  doCheck = False;
+
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {

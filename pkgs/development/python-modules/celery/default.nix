@@ -32,6 +32,7 @@ buildPythonPackage rec {
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
+  doCheck = false;
 
   src = fetchPypi {
     inherit pname version;

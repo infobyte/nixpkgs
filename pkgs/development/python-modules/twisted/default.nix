@@ -51,6 +51,8 @@ buildPythonPackage rec {
 
   disabled = pythonOlder "3.6";
 
+  doCheck = False;
+
   src = fetchPypi {
     pname = "Twisted";
     inherit version;

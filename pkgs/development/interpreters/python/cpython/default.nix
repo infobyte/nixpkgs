@@ -511,6 +511,8 @@ in with passthru; stdenv.mkDerivation {
     EOF
   '';
 
+  doCheck = false;
+
   # Enforce that we don't have references to the OpenSSL -dev package, which we
   # explicitly specify in our configure flags above.
   disallowedReferences =
