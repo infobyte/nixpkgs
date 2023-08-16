@@ -27,7 +27,7 @@ buildPythonPackage rec {
   version = "58.1";
   format = "pyproject";
 
-  doCheck = False;
+  doCheck = false;
 
   disabled = pythonOlder "3.7";
 
