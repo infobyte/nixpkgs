@@ -16,9 +16,9 @@
 buildPythonPackage rec {
   pname = "werkzeug";
   version = "2.3.8";
-  format = "setuptools";
+  format = "pyproject";
 
-  disabled = pythonOlder "3.7";
+  disabled = pythonOlder "3.8";
 
   src = fetchPypi {
     pname = "Werkzeug";
