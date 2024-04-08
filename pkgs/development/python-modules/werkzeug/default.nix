@@ -34,6 +34,10 @@ buildPythonPackage rec {
     watchdog
   ];
 
+  nativeBuildInputs = [
+    flit-core
+  ];
+
   nativeCheckInputs = [
     ephemeral-port-reserve
     pytest-timeout
