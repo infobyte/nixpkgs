@@ -3627,6 +3627,8 @@ self: super: with self; {
 
   flask-caching = callPackage ../development/python-modules/flask-caching { };
 
+  flask-classful = callPackage ../development/python-modules/flask-classful { };
+
   flask = callPackage ../development/python-modules/flask { };
 
   flask-common = callPackage ../development/python-modules/flask-common { };

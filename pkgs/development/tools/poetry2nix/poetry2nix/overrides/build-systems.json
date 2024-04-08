@@ -5519,6 +5519,9 @@
   "flask-caching": [
     "setuptools"
   ],
+  "flask-classful": [
+    "setuptools"
+  ],
   "flask-common": [
     "setuptools"
   ],
