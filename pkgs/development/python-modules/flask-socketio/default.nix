@@ -2,6 +2,7 @@
 , buildPythonPackage
 , coverage
 , fetchFromGitHub
+, setuptools
 , flask
 , pytestCheckHook
 , python-socketio
@@ -11,16 +12,21 @@
 
 buildPythonPackage rec {
   pname = "Flask-SocketIO";
-  version = "5.3.3";
+  version = "5.3.6";
+  format = "pyproject";
 
   disabled = pythonOlder "3.6";
 
   src = fetchFromGitHub {
     owner = "miguelgrinberg";
     repo = "Flask-SocketIO";
-    rev = "v${version}";
-    hash = "sha256-oqy6tSk569QaSkeNsyXuaD6uUB3yuEFg9Jwh5rneyOE=";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-YjCe34Mvt7tvp3w5yH52lrq4bWi7aIYAUssNqxlQ8CA=";
   };
+
+  nativeBuildInputs = [
+    setuptools
+  ];
 
   propagatedBuildInputs = [
     flask
