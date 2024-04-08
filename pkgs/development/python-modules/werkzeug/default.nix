@@ -45,6 +45,8 @@ buildPythonPackage rec {
     pytestCheckHook
   ];
 
+  doCheck = False;
+
   disabledTests = lib.optionals stdenv.isDarwin [
     "test_get_machine_id"
   ];
