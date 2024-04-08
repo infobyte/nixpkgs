@@ -9,7 +9,7 @@
 , pytest-xprocess
 , pytestCheckHook
 , markupsafe
-, flit_core
+, flit-core
 # for passthru.tests
 , moto, sentry-sdk
 }:
