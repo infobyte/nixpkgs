@@ -24,7 +24,7 @@
 buildPythonPackage rec {
   pname = "jira";
   version = "3.8.0";
-  pyproject = true;
+  format = "pyproject";
 
   disabled = pythonOlder "3.8";
 
